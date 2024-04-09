@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-// const username = "admin" + Math.floor(Math.random()*9).toString();
-// const password = "password" + Math.floor(Math.random()*9).toString() + Math.floor(Math.random()*9).toString(); 
+const username = "admin" + Math.floor(Math.random()*9).toString();
+const password = "password" + Math.floor(Math.random()*9).toString() + Math.floor(Math.random()*9).toString(); 
 
-const username = "admin";
-const password = "password";
+// const username = "admin";
+// const password = "password";
 
 router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/login.html'));
