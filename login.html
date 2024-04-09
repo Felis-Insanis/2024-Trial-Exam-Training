@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Treasure</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device_width">
+    </head>
+    <body>
+        username:<input type="text" id="usr"> <br/>
+        password:<input type="text" id="pwd"> <br/>
+        <button onclick="redirect()">log in</button> <br/>
+        <img id="treasure_here"/>
+    </body>
+    <script>
+        
+        async function redirect(){
+        const username = document.getElementById('usr').value;
+        const password = document.getElementById('pwd').value;
+        let request = await fetch("http://localhost:3000/api/treasure/", {
+            method: 'GET',
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                u53rn4me: username,
+                p45sw0rd: password
+            }
+        });
+        let response = await request.text();
+
+        document.getElementById("treasure_here").src = response;
+    }
+    </script>
+</html>
