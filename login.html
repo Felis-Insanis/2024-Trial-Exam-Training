@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device_width">
     </head>
     <body>
-        username:<input type="text" id="usr"> <br/>
-        password:<input type="text" id="pwd"> <br/>
+        <p>username:</p> <input type="text" id="usr"> <br/>
+        <p>password:</p> <input type="text" id="pwd"> <br/>
         <button onclick="redirect()">log in</button> <br/>
         <img id="treasure_here"/>
     </body>
@@ -15,7 +15,7 @@
         async function redirect(){
             const username = document.getElementById('usr').value;
             const password = document.getElementById('pwd').value;
-            let request = await fetch("http://localhost:3000/api/treasure/", {
+            let request = await fetch("http://localhost:3000/treasure/", {
                 method: 'GET',
                 headers: {
                     "Content-type": "application/json; charset=UTF-8",
