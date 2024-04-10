@@ -12,21 +12,20 @@
         <img id="treasure_here"/>
     </body>
     <script>
-        
         async function redirect(){
-        const username = document.getElementById('usr').value;
-        const password = document.getElementById('pwd').value;
-        let request = await fetch("http://localhost:3000/api/treasure/", {
-            method: 'GET',
-            headers: {
-                "Content-type": "application/json; charset=UTF-8",
-                u53rn4me: username,
-                p45sw0rd: password
-            }
-        });
-        let response = await request.text();
+            const username = document.getElementById('usr').value;
+            const password = document.getElementById('pwd').value;
+            let request = await fetch("http://localhost:3000/api/treasure/", {
+                method: 'GET',
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8",
+                    u53rn4me: username,
+                    p45sw0rd: password
+                }
+            });
+            let response = await request.text();
 
-        document.getElementById("treasure_here").src = response;
-    }
+            document.getElementById("treasure_here").src = response;
+        }
     </script>
 </html>
